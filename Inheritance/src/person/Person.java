@@ -1,4 +1,4 @@
-package PO1_person;
+package person;
 
 public class Person {
     private String name;
