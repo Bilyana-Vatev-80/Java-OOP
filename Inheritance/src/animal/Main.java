@@ -1,56 +1,46 @@
 package animal;
 
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String typeAnimal = scanner.nextLine();
 
-        while (!typeAnimal.equals("Beast!")) {
-            String[] animalData = scanner.nextLine().split("\\s+");
-            String name = animalData[0];
-            int age = Integer.parseInt(animalData[1]);
+        String input = scanner.nextLine();
 
+        List<Animal> animals = new ArrayList<>();
+
+        while (!input.equals("Beast!")) {
+
+            String[] tokens = scanner.nextLine().split("\\s+");
+
+            Animal animal;
             try {
-                if (age < 0) {
-                    throw new IllegalArgumentException("Invalid input!");
+                if (input. equals("Dog")) {
+                    animal = new Dog(tokens[0], Integer.parseInt(tokens[1]), tokens[2]);
+                } else if (input. equals("Cat")) {
+                    animal = new Cat(tokens[0], Integer.parseInt(tokens[1]), tokens[2]);
+                } else if (input. equals("Frog")) {
+                    animal = new Frog(tokens[0], Integer.parseInt(tokens[1]), tokens[2]);
+                } else if (input. equals("Kittens")) {
+                    animal = new Kitten(tokens[0], Integer.parseInt(tokens[1]));
+                } else {
+                    animal = new Tomcat(tokens[0], Integer.parseInt(tokens[1]));
                 }
-                if (!animalData[2].equals("Male") && !animalData[2].equals("Female")) {
-                    throw new IllegalArgumentException("Invalid input!");
-                }
-            } catch (IllegalArgumentException e) {
+                animals.add(animal);
+            } catch (IllegalArgumentException ex) {
+                System.out.println(ex.getMessage());
+            } catch (IndexOutOfBoundsException ex) {
                 System.out.println("Invalid input!");
-                typeAnimal = scanner.nextLine();
-                continue;
             }
-
-            Gender gender = Gender.valueOf(animalData[2].toUpperCase());
-            switch (typeAnimal) {
-                case "Frog":
-                    Frog frog = new Frog(name, age, gender);
-                    System.out.println(frog.toString());
-                    break;
-                case "Dog":
-                    Dog dog = new Dog(name, age, gender);
-                    System.out.println(dog.toString());
-                    break;
-                case "Cat":
-                    Cat cat = new Cat(name, age, gender);
-                    System.out.println(cat.toString());
-                    break;
-                case "Kitten":
-                    Kitten kitten = new Kitten(name, age);
-                    System.out.println(kitten.toString());
-                    break;
-                case "Tomcat":
-                    Tomcat tomcat = new Tomcat(name, age);
-                    System.out.println(tomcat.toString());
-                    break;
-            }
-            typeAnimal = scanner.nextLine();
+            input = scanner.nextLine();
         }
 
+        for (Animal animal : animals) {
+            System.out.println(animal.toString());
+        }
     }
 }

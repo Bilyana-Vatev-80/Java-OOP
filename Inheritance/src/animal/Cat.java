@@ -1,12 +1,12 @@
 package animal;
 
 public class Cat extends Animal{
-    public Cat(String name, int age, Gender gender){
-        super(name,age,gender);
+    public Cat(String name, int age, String gender) {
+        super(name, age, gender);
     }
 
     @Override
-    protected String produceSound() {
+    public String produceSound() {
         return "Meow meow";
     }
 }
