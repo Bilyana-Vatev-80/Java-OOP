@@ -1,20 +1,25 @@
 package PO3_CardsWithPower;
 
 public class Card {
-    private CardRank number;
-    private CardSuits color;
+    private Rank cardRank;
+    private Suit cardSuite;
     private int power;
 
-    public Card (CardRank number, CardSuits color){
-        this.number = number;
-        this.color = color;
-        // сила на картата = сила на номера + сила на боята
-        this.power = number.getPower() + color.getPower();
+    public
+    Card (Rank cardRank, Suit cardSuite) {
+        this.cardRank = cardRank;
+        this.cardSuite = cardSuite;
+        setPower ();
     }
-    @Override
-    public String toString (){
-        String cardName = this.number + " of " + this.color;
-        return String.format("Card name: %s; Card power: %d", cardName, this.power);
 
+    private
+    void setPower () {
+        this.power = this.cardRank.getRank () + this.cardSuite.getSuit ();;
+    }
+
+    @Override
+    public
+    String toString () {
+        return String.format ("Card name: %s of %s; Card power: %d",this.cardRank.name (),this.cardSuite.name (), this.power );
     }
 }
