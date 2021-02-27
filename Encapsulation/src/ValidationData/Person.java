@@ -63,15 +63,17 @@ public class Person {
     }
     public
     void increaseSalary (double bonus) {
-        if (this.getAge () <= 30) {
+        if (this.getAge () < 30) {
             this.setSalary (this.getSalary () * (1 + bonus / 200));
+        } else {
+            this.setSalary(this.getSalary() * (1 + bonus / 100));
         }
-        this.setSalary (this.getSalary () * (1 + bonus / 100));
     }
 
     @Override
     public
     String toString () {
-        return String.format ("%s %s gets %s leva", this.getFirstName (), this.getLastName (), this.getSalary ());
+            return String.format("%s %s gets %s leva", this.getFirstName(), this.getLastName(), this.getSalary());
+
     }
 }

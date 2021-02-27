@@ -16,7 +16,7 @@ public class Product {
         this.name = name;
     }
     private void setCost (double cost){
-        if(cost < 0){
+        if(cost <= 0){
             throw new IllegalArgumentException("Money cannot be negative");
         }
         this.cost = cost;

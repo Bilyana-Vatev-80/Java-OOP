@@ -14,7 +14,8 @@ public class Main {
             people = setPeople (scanner);
             products = setProducts (scanner);
         }catch (IllegalArgumentException ex){
-            System.out.println (ex.getMessage ());return;
+            System.out.println (ex.getMessage ());
+            return;
         }
 
         String command = scanner.nextLine ();
@@ -28,8 +29,8 @@ public class Main {
         }
 
 
-        for (Map.Entry<String, Person> stringPersonEntry : people.entrySet ()) {
-            System.out.println (stringPersonEntry.getValue ());
+        for (Person person : people.values()) {
+            System.out.println(person.toString());
         }
 
 
@@ -39,10 +40,10 @@ public class Main {
     Map<String, Product> setProducts (Scanner scanner) {
         Map<String,Product> products = new LinkedHashMap<> ();
         String[] productsInfo = scanner.nextLine ().split (";");
-        for (int i = 0; i < productsInfo.length; i++) {
-            String[] tokens = productsInfo[i].split ("=");
-            Product product = new Product (tokens[0],Double.parseDouble (tokens[1]) );
-            products.put (tokens[0],product);
+        for (String info : productsInfo) {
+            String[] tokens = info.split("=");
+            Product product = new Product(tokens[0], Double.parseDouble(tokens[1]));
+            products.put(tokens[0],product);
         }
         return products;
     }
@@ -51,8 +52,8 @@ public class Main {
     Map<String, Person> setPeople (Scanner scanner) {
         Map<String,Person> people = new LinkedHashMap<> ();
         String[] peopleInfo = scanner.nextLine ().split (";");
-        for (int i = 0; i < peopleInfo.length; i++) {
-            String[] tokens = peopleInfo[i].split ("=");
+        for (String info : peopleInfo) {
+            String[] tokens = info.split ("=");
             Person person = new Person (tokens[0],Double.parseDouble (tokens[1]) );
             people.put (tokens[0],person );
         }
