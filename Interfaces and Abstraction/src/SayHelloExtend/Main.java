@@ -1,17 +1,11 @@
 package SayHelloExtend;
 
-import SayHello.Bulgarian;
-import SayHello.Chinese;
-import SayHello.European;
-import SayHello.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<SayHello.Person> persons = new ArrayList<>();
-
+        List<Person> persons = new ArrayList<>();
 
         persons.add(new Bulgarian("Pesho"));
         persons.add(new European("Pesho"));
@@ -20,8 +14,8 @@ public class Main {
         for (Person person : persons) {
             print(person);
         }
-    }
 
+    }
     private static void print(Person person) {
         System.out.println(person.sayHello());
     }
