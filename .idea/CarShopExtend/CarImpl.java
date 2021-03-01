@@ -1,6 +1,6 @@
 package CarShopExtend;
 
-public abstract  class CarImpl implements Car{
+public abstract class CarImpl implements Car{
     private String model;
     private String color;
     private int horsePower;
