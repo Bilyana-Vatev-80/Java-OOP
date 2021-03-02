@@ -1,2 +1,7 @@
-package DefineAnInterfacePerson;public interface Persom {
+package DefineAnInterfacePerson;
+
+public interface Person {
+
+    String getName();
+    int getAge();
 }
