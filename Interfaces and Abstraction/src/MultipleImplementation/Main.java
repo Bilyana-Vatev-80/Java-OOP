@@ -1,2 +1,8 @@
-package MultipleImplementation;public class Main {
+package MultipleImplementation;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+    }
 }

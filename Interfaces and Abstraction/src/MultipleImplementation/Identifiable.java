@@ -1,2 +1,5 @@
-package MultipleImplementation;public class Identifiable {
+package MultipleImplementation;
+
+public interface Identifiable {
+    String getId();
 }

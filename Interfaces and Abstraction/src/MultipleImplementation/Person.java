@@ -1,2 +1,6 @@
-package MultipleImplementation;public interface Person {
+package MultipleImplementation;
+
+public interface Person {
+    String getName();
+    int getAge();
 }
