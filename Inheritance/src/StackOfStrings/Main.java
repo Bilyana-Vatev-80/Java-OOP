@@ -1,8 +1,8 @@
-package StackofStrings;
+package StackOfStrings;
 
 public class Main {
     public static void main(String[] args) {
-       Stack stack = new Stack();
+       StackOfStrings stack = new StackOfStrings();
 
         stack.push("one");
         stack.push("two");

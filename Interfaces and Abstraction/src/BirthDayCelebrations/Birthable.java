@@ -1,2 +1,5 @@
-package BirthDayCelebrations;public interface Birthable {
+package BirthDayCelebrations;
+
+public interface Birthable {
+    String getBirthDate();
 }

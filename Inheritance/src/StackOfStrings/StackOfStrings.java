@@ -1,12 +1,11 @@
-package StackofStrings;
+package StackOfStrings;
 
 import java.util.ArrayDeque;
-import java.util.Deque;
 
-public class Stack {
+public class StackOfStrings {
     private ArrayDeque<String> data;
 
-    public Stack (){
+    public StackOfStrings(){
         this.data = new ArrayDeque<>();
     }
     public void push (String element) {
