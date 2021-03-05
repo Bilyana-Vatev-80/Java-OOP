@@ -9,6 +9,7 @@ public class Coffee extends HotBeverage{
 
     public Coffee(String name,double caffeine) {
         super(name,COFFEE_PRICE,COFFEE_MILLILITERS);
+        this.caffeine = caffeine;
     }
 
     public double getCaffeine() {
