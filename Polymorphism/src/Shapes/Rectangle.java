@@ -7,6 +7,8 @@ public class Rectangle extends Shapes{
     public Rectangle(Double width,Double height){
         setWidth(width);
         setHeight(height);
+        calculateArea();
+        calculatePerimeter();
     }
     private void setWidth(Double width) {
         this.width = width;
