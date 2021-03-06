@@ -1,8 +1,8 @@
 package CarShopExtend;
 
 public class Audi extends CarImpl implements Rentable{
-    private int minRentDay;
-    private double pricePerDay;
+    private Integer minRentDay;
+    private Double pricePerDay;
 
     public
     Audi (String model, String color, int horsePower, String countryProduced, int minRentDay, double pricePerDay) {

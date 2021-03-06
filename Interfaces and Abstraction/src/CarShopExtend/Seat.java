@@ -1,7 +1,7 @@
 package CarShopExtend;
 
 public class Seat extends CarImpl implements Sellable{
-    private double price;
+    private Double price;
 
     public
     Seat (String model, String color, int horsePower, String countryProduced, double price) {
