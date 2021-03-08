@@ -1,18 +1,18 @@
 package Telephony;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<String> number = List.of(scanner.nextLine().split("\\s+"));
-        List<String> urls = List.of(scanner.nextLine().split("\\s+"));
-
-        Smartphone smartphone = new Smartphone(number,urls);
-
-        System.out.println(smartphone.call());
-        System.out.println(smartphone.browse());
+        Smartphone phone = new Smartphone(Arrays.stream(scanner.nextLine().split("\\s+"))
+                .collect(Collectors.toList()),Arrays.stream(scanner.nextLine().split("\\s+"))
+                .collect(Collectors.toList()));
+        System.out.println(phone.call());
+        System.out.println(phone.browse());
     }
 }
