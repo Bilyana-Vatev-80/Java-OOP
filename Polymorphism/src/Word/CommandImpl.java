@@ -7,6 +7,14 @@ import java.util.Map;
 
 public class CommandImpl implements CommandInterface {
     static String cutPart;
+    private Map<String, TextTransform> commandTransforms;
+    private StringBuilder text;
+
+    public CommandImpl(StringBuilder text) {
+        this.commandTransforms = new HashMap<>();
+        this.text = text;
+    }
+
     class ToUpperTransform implements TextTransform {
         @Override
         public void invokeOn(StringBuilder text, int startIndex, int endIndex){
@@ -15,12 +23,18 @@ public class CommandImpl implements CommandInterface {
             }
         }
     }
-    private Map<String, TextTransform> commandTransforms;
-    private StringBuilder text;
-
-    public CommandImpl(StringBuilder text) {
-        this.commandTransforms = new HashMap<>();
-        this.text = text;
+    class CutTransform implements TextTransform{
+        @Override
+        public void invokeOn(StringBuilder text, int startIndex, int endIndex) {
+            cutPart = text.substring(startIndex,endIndex);
+            text.delete(startIndex,endIndex);
+        }
+    }
+    class PasteTransform implements TextTransform{
+        @Override
+        public void invokeOn(StringBuilder text, int startIndex, int endIndex) {
+            text.replace(startIndex,endIndex,cutPart);
+        }
     }
 
     @Override
@@ -38,13 +52,15 @@ public class CommandImpl implements CommandInterface {
         String commandName = tokens[0];
         int startInd = Integer.parseInt(tokens[1]);
         int endInd = Integer.parseInt(tokens[2]);
-
+        init();
         this.commandTransforms.get(commandName).invokeOn(this.text, startInd, endInd);
     }
 
     protected List<Command> initCommands() {
         List<Command> commands = new ArrayList<>();
         commands.add(new Command("uppercase", new ToUpperTransform()));
+        commands.add(new Command("cut",new CutTransform()));
+        commands.add(new Command("paste",new PasteTransform()));
 
         return commands;
     }
