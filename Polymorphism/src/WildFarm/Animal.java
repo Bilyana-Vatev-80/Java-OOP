@@ -6,19 +6,23 @@ public abstract class Animal {
     private String animalName;
     private String animalType;
     private Double animalWeight;
-    private String livingRegion;
     private Integer foodEaten;
+    private String livingRegion;
 
-    protected Animal(String animalName, String animalType, Double animalWeight,String livingRegion) {
+    protected Animal(String animalName, String animalType, Double animalWeight, String livingRegion) {
         this.animalName = animalName;
         this.animalType = animalType;
         this.animalWeight = animalWeight;
-        this.livingRegion = livingRegion;
         foodEaten = 0;
+        this.livingRegion = livingRegion;
     }
 
     public String getAnimalName() {
         return this.animalName;
+    }
+
+    public String getAnimalType() {
+        return this.animalType;
     }
 
     public Double getAnimalWeight() {
@@ -32,17 +36,17 @@ public abstract class Animal {
     public String getLivingRegion() {
         return this.livingRegion;
     }
-
     protected abstract void makeSound();
 
     protected void eat(Food food){
-      this.foodEaten += food.getQuantity();
+        this.foodEaten += food.getQuantity();
     }
     protected DecimalFormat format(){
         return new DecimalFormat("##.##");
     }
     @Override
     public String toString(){
-        return String.format("%s[%s, %s, %s, %d]",getClass().getSimpleName(),getAnimalName(),format().format(getAnimalWeight()),getLivingRegion(),getFoodEaten());
+        return String.format("%s[%s, %s, %s, %d]",getClass().getSimpleName(),getAnimalName(),format().format(getAnimalWeight()),
+                getLivingRegion(),getFoodEaten());
     }
 }

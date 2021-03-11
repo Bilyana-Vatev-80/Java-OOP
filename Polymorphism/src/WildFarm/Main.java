@@ -7,11 +7,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+
         List<Animal> animals = new ArrayList<>();
+        String input = scanner.nextLine();
+
         while (!"End".equals(input)){
             String[] tokens = input.split("\\s+");
             Animal animal = createAnimal(tokens);
+
 
             String[] provideFood = scanner.nextLine().split("\\s+");
             Food food = createFood(provideFood);
@@ -22,31 +25,30 @@ public class Main {
             } catch (IllegalArgumentException ex){
                 System.out.println(ex.getMessage());
             }
-            animals.add(animal);
+
+             animals.add(animal);
 
             input = scanner.nextLine();
         }
-
         for (Animal animal : animals) {
             System.out.println(animal);
         }
+
     }
 
     private static Food createFood(String[] provideFood) {
-        String foodName = provideFood[0];
-        Integer foodWeight = Integer.parseInt(provideFood[1]);
+        String typeFood = provideFood[0];
+        Integer quantity = Integer.parseInt(provideFood[1]);
 
-        return foodName.equals("Meat")? new Meat(foodWeight) :
-                new Vegetable(foodWeight);
-
-    }
+        return typeFood.equals("Meat") ? new Meat(quantity) : new Vegetable(quantity);
+        }
 
     private static Animal createAnimal(String[] tokens) {
         String animalType = tokens[0];
         String animalName = tokens[1];
-        Double animalWeight = Double.parseDouble(tokens[2]);
+        double animalWeight = Double.parseDouble(tokens[2]);
         String animalLivingRegion = tokens[3];
-        Animal animal = null;
+        Animal animal;
         switch (animalType){
             case "Cat":
                 animal = new Cat(animalName,animalType,animalWeight,animalLivingRegion,tokens[4]);
@@ -61,9 +63,8 @@ public class Main {
                 animal = new Mouse(animalName,animalType,animalWeight,animalLivingRegion);
                 break;
             default:
-                throw new IllegalArgumentException("Unexpected value: " + animalType);
+                throw new IllegalStateException("Unexpected value: " + animalType);
         }
-
-        return animal;
+      return animal;
     }
 }

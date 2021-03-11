@@ -1,7 +1,8 @@
 package WildFarm;
 
 public class Vegetable extends Food{
-    protected Vegetable(Integer quantity) {
+
+    public Vegetable(Integer quantity) {
         super(quantity);
     }
 }
