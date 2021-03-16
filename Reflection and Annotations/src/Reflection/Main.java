@@ -9,7 +9,8 @@ public class Main {
         Class<Reflection> clazz = Reflection.class;
 
         System.out.println(clazz);
-        System.out.println(clazz.getSuperclass());
+        Class superClass = clazz.getSuperclass();
+        System.out.println(superClass);
 
         Class<?>[] interfaces = clazz.getInterfaces();
         for (Class<?> anInterface : interfaces) {
