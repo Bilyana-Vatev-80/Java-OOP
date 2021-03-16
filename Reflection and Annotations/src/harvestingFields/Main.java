@@ -1,21 +1,25 @@
 package harvestingFields;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Class<?> clazz = RichSoilLand.class;
 
 		Field[] field = clazz.getFields();
 
 		List<Field> fields = Arrays.asList(clazz.getDeclaredFields());
-		Scanner scanner = new Scanner(System.in);
+		BufferedReader reader = new BufferedReader(new
+				InputStreamReader(System.in));
 
-		String input = scanner.nextLine();
+		String input = reader.readLine();
 
 		while (!input.equals("HARVEST")){
 
@@ -28,7 +32,7 @@ public class Main {
 							f.getType().getSimpleName(),
 							f.getName()));
 
-			input = scanner.nextLine();
+			input = reader.readLine();
 		}
 	}
 }
