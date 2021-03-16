@@ -1,4 +1,4 @@
-package Reflection;
+package reflection;
 
 import java.io.Serializable;
 

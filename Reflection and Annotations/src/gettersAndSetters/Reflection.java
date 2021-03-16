@@ -1,4 +1,4 @@
-package GettersAndSetters;
+package gettersAndSetters;
 
 import java.io.Serializable;
 
