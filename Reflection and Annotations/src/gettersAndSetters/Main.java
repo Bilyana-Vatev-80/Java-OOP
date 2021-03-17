@@ -3,6 +3,7 @@ package gettersAndSetters;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Comparator;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -17,39 +18,30 @@ public class Main {
     }
 
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, ClassNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+        Class<?> reflection = Class.forName ("GettersAndSetters.Reflection");
 
-        Class<?> clazz = Class.forName("Reflection");
 
-        Method[] declaredMethods = clazz.getDeclaredMethods();
+        Method[] declaredMethods = reflection.getDeclaredMethods ();
 
-        Set<Method> getter = new TreeSet<>(new MethodComparatorByName());
 
-        Set<Method> setter = new TreeSet<>(new MethodComparatorByName());
+        Set<Method> getters = new TreeSet<> (new MethodComparatorByName ());
+        Set<Method> setters = new TreeSet<> (new MethodComparatorByName ());
 
-        for (Method method : declaredMethods) {
-            if (method.getName().startsWith("get")
-                    && method.getParameterCount() == 0
-                    && method.getReturnType() != void.class) {
-
-                getter.add(method);
-            } else if (method.getName().startsWith("set")
-                    && method.getParameterCount() == 1
-                    && method.getReturnType() == void.class) {
-
-                setter.add(method);
+        for (Method declaredMethod : declaredMethods) {
+            if (declaredMethod.getName ().startsWith ("get")
+                    && declaredMethod.getParameterCount ()==0
+                    && declaredMethod.getReturnType () != void.class){
+                getters.add (declaredMethod);
+            }else if (declaredMethod.getName ().startsWith ("set")){
+                setters.add (declaredMethod);
             }
         }
-        System.out.println(getter
-                .stream()
-                .map(g -> String.format("%s will return class %s", g.getName(), g.getReturnType().getName().replace("class","")))
-                .collect(Collectors.joining(System.lineSeparator()))
-        );
-
-        System.out.println(setter
-                .stream()
-                .map(s -> String.format("%s will set field of class %s", s.getName(), s.getParameterTypes()[0]
-                .getName().replace("class","")))
-                .collect(Collectors.joining(System.lineSeparator()))
-        );
+        System.out.println (getters.stream ().map (g -> String.format ("%s will return class %s",
+                g.getName (), g.getReturnType ().toString ().replace ("class ","")))
+                .collect (Collectors.joining (System.lineSeparator ())));
+        System.out.println (setters.stream ().map (s -> String.format ("%s and will set field of class %s",
+                s.getName (), s.getParameterTypes ()[0].toString ().replace ("class ","")))
+                .collect (Collectors.joining (System.lineSeparator ())));
     }
 }

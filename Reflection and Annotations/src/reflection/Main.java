@@ -1,22 +1,26 @@
 package reflection;
 
+import gettersAndSetters.Reflection;
+
 import java.lang.reflect.InvocationTargetException;
 
 public class Main {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class<Reflection> clazz = Reflection.class;
+        Class reflection = Reflection.class;
 
-        System.out.println(clazz);
-        Class superClass = clazz.getSuperclass();
-        System.out.println(superClass);
+        System.out.println(reflection);
 
-        Class<?>[] interfaces = clazz.getInterfaces();
-        for (Class<?> anInterface : interfaces) {
+        Class superClazz  = reflection.getSuperclass();
+        System.out.println(superClazz);
+
+        Class[] interfaces = reflection.getInterfaces();
+
+        for (Class anInterface : interfaces) {
             System.out.println(anInterface);
         }
 
-        Reflection instance = (Reflection) clazz.getDeclaredConstructor().newInstance();
+      Object reflectionObject = reflection.getDeclaredConstructor().newInstance();
+        System.out.println(reflectionObject);
 
-        System.out.println(instance.toString());
     }
 }
