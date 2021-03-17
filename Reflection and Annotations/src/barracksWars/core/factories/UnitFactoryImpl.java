@@ -2,7 +2,10 @@ package barracksWars.core.factories;
 
 import barracksWars.interfaces.Unit;
 import barracksWars.interfaces.UnitFactory;
+import barracksWars.models.units.*;
 import jdk.jshell.spi.ExecutionControl;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class UnitFactoryImpl implements UnitFactory {
 
@@ -11,7 +14,14 @@ public class UnitFactoryImpl implements UnitFactory {
 
 	@Override
 	public Unit createUnit(String unitType) throws ExecutionControl.NotImplementedException {
-		// TODO: implement for problem 3
-		throw new ExecutionControl.NotImplementedException("message");
+		Unit unit;
+		try {
+			Class<?> clazz = Class.forName(UNITS_PACKAGE_NAME + unitType);
+
+			unit = (Unit)clazz.getDeclaredConstructor().newInstance();
+		} catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+			throw new IllegalStateException(e);
+		}
+		return unit;
 	}
 }
