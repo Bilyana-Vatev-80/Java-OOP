@@ -12,7 +12,9 @@
       <module fileurl="file://$PROJECT_DIR$/Polymorphism/Polymorphism.iml" filepath="$PROJECT_DIR$/Polymorphism/Polymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/Reflection and Annotations/Reflection and Annotations.iml" filepath="$PROJECT_DIR$/Reflection and Annotations/Reflection and Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/SOLID/SOLID.iml" filepath="$PROJECT_DIR$/SOLID/SOLID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit Testing/Unit Testing.iml" filepath="$PROJECT_DIR$/Unit Testing/Unit Testing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Working with Abstraction/Working with Abstraction.iml" filepath="$PROJECT_DIR$/Working with Abstraction/Working with Abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Workshop/Workshop.iml" filepath="$PROJECT_DIR$/Workshop/Workshop.iml" />
     </modules>
   </component>
 </project>
