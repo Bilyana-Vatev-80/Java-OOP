@@ -1,5 +1,7 @@
 package easterRaces.entities.cars;
 
+import static easterRaces.common.ExceptionMessages.*;
+
 public abstract class BaseCar implements Car{
     private String model;
     private int horsePower;
@@ -12,6 +14,9 @@ public abstract class BaseCar implements Car{
     }
 
     public void setModel(String model) {
+        if(model == null || model.trim().isEmpty() || model.length() < 4){
+            throw new IllegalArgumentException(String.format(INVALID_MODEL,model,4));
+        }
         this.model = model;
     }
 
@@ -21,6 +26,18 @@ public abstract class BaseCar implements Car{
     }
 
     public void setHorsePower(int horsePower) {
+        switch (this.getClass().getSimpleName()){
+            case "MuscleCar":
+                if(horsePower < 400 || horsePower > 600){
+                    throw new IllegalArgumentException(String.format(INVALID_HORSE_POWER, horsePower));
+                }
+               break;
+            case "SportCar":
+                if(horsePower < 250 || horsePower > 450){
+                    throw new IllegalArgumentException(String.format(INVALID_HORSE_POWER, horsePower));
+                }
+                break;
+        }
         this.horsePower = horsePower;
     }
 
@@ -40,6 +57,6 @@ public abstract class BaseCar implements Car{
 
     @Override
     public double calculateRacePoints(int laps) {
-        return 0;
+        return cubicCentimeters / (horsePower * laps);
     }
 }

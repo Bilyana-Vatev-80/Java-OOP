@@ -2,6 +2,8 @@ package easterRaces.entities.drivers;
 
 import easterRaces.entities.cars.Car;
 
+import static easterRaces.common.ExceptionMessages.*;
+
 public class DriverImpl implements Driver{
     private String name;
     private Car car;
@@ -21,6 +23,9 @@ public class DriverImpl implements Driver{
     }
 
     public void setName(String name) {
+        if(name == null || name.trim().isEmpty() || name.length() < 5){
+            throw new IllegalArgumentException(String.format(INVALID_NAME,name,5));
+        }
         this.name = name;
     }
 
@@ -44,16 +49,23 @@ public class DriverImpl implements Driver{
 
     @Override
     public void addCar(Car car) {
-
+        if(car == null){
+            throw new IllegalArgumentException(CAR_INVALID);
+        }
+        this.car = car;
+        this.canParticipate = true;
     }
 
     @Override
     public void winRace() {
-
+      this.numberOfWins ++;
     }
 
     public void setCanParticipate(boolean canParticipate) {
-        this.canParticipate = canParticipate;
+        if(this.car != null){
+            this.canParticipate = true;
+        }
+        this.canParticipate = false;
     }
 
     @Override

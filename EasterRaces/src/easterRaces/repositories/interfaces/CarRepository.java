@@ -15,21 +15,26 @@ public class CarRepository<T> implements Repository<Car>{
 
     @Override
     public Car getByName(String name) {
+        for (Car car: models) {
+            if(car.getModel().equals(name)){
+                return car;
+            }
+        }
         return null;
     }
 
     @Override
     public Collection<Car> getAll() {
-        return null;
+        return this.models;
     }
 
     @Override
     public void add(Car model) {
-
+       this.models.add(model);
     }
 
     @Override
     public boolean remove(Car model) {
-        return false;
+        return this.models.remove(model);
     }
 }

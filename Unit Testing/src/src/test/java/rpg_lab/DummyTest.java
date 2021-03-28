@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class DummyTest {
     @Test
-    public void attackedTargetLoosestHealth(){
+    public void attackedTargetLoosestHealth() {
         Dummy dummy = new Dummy(10,10);
 
         dummy.takeAttack(5);
