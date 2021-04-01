@@ -8,6 +8,9 @@
       <sourceFolder url="file://$MODULE_DIR$/EasterRaces/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Store/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CounterStriker/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HalfLife/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BankSafe/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BankSafe/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
