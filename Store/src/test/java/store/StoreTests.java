@@ -47,7 +47,7 @@ public class StoreTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testBuyProductShouldThExWhenProductNotExsit() {
+    public void testBuyProductShouldThExWhenProductNotExit() {
         store.buyProduct("Crisp", 1);
     }
 
