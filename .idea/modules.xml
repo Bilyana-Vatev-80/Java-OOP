@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Interfaces and Abstraction/Interfaces and Abstraction/.iml" filepath="$PROJECT_DIR$/Interfaces and Abstraction/Interfaces and Abstraction/.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPatterns_Exercises/DesignPatterns_Exercises.iml" filepath="$PROJECT_DIR$/DesignPatterns_Exercises/DesignPatterns_Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesinePatterns_Lab/DesinePatterns_Lab.iml" filepath="$PROJECT_DIR$/DesinePatterns_Lab/DesinePatterns_Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/Encapsulation/Encapsulation.iml" filepath="$PROJECT_DIR$/Encapsulation/Encapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exam Preparation/Exam Preparation.iml" filepath="$PROJECT_DIR$/Exam Preparation/Exam Preparation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exceptions And Error Handling/Exceptions And Error Handling.iml" filepath="$PROJECT_DIR$/Exceptions And Error Handling/Exceptions And Error Handling.iml" />

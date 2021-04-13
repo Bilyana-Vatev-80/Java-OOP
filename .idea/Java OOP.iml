@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ViceCity/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Computers/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Computers/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/DesinePatterns_Lab/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
