@@ -17,6 +17,11 @@
       <module fileurl="file://$PROJECT_DIR$/Unit Testing/Unit Testing.iml" filepath="$PROJECT_DIR$/Unit Testing/Unit Testing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Working with Abstraction/Working with Abstraction.iml" filepath="$PROJECT_DIR$/Working with Abstraction/Working with Abstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Workshop/Workshop.iml" filepath="$PROJECT_DIR$/Workshop/Workshop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aquarium/aquarium.iml" filepath="$PROJECT_DIR$/aquarium/aquarium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easterRace1/easterRace1.iml" filepath="$PROJECT_DIR$/easterRace1/easterRace1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlineShop/onlineShop.iml" filepath="$PROJECT_DIR$/onlineShop/onlineShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>
 </project>

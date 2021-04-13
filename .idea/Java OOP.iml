@@ -11,6 +11,10 @@
       <sourceFolder url="file://$MODULE_DIR$/HalfLife/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BankSafe/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BankSafe/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/BlueOrigin/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ViceCity/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Computers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Computers/src/test/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
