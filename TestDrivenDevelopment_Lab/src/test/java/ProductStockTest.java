@@ -258,7 +258,7 @@ public class ProductStockTest {
 
     private void assertFindReturnsCorrectProduct(int index){
         addProducts();
-        assertEquals(Integer.valueOf(10), instock.getCount());
+        assertEquals(Optional.ofNullable(Integer.valueOf(10)), instock.getCount());
         /*Product product = instock.find(index);
         assertNotNull(product);*/
         Product product = assertNotNullReturnedObject(() -> instock.find(index));
